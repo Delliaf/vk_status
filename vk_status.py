@@ -6,6 +6,7 @@ from getpass import getpass
 
 log = input('Введите логин: ')
 passwd = getpass('Введите пароль: ')
+hours = int(input('Часовой пояс (в UTC-формате и только цифры): '))
 
 def auth_handler(): #если есть двухфакторная аутентификция, то вызывается эта функция
     key = input("Введи код двухфакторной аутентификации: ") #код аутентификации
@@ -25,7 +26,7 @@ def main():
         def countdown(stop):
             while True:
                 vk_session.auth()
-                delta = datetime.timedelta(hours = 3)
+                delta = datetime.timedelta(hours = hours)
                 t = (datetime.datetime.now(datetime.timezone.utc) + delta)
                 nowtime = t.strftime("%H:%M") #текущее время
                 nowdate = t.strftime("%d.%m.%Y") #текущая дата
