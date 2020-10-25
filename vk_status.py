@@ -5,7 +5,7 @@ import vk_api
 from getpass import getpass
 
 log = input('Введите логин: ')
-passwd = getpass('Введи пароль: ')
+passwd = getpass('Введите пароль: ')
 
 def auth_handler(): #если есть двухфакторная аутентификция, то вызывается эта функция
     key = input("Введи код двухфакторной аутентификации: ") #код аутентификации
