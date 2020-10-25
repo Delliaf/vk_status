@@ -37,8 +37,8 @@ def main():
                 nowdate = t.strftime("%d.%m.%Y") #текущая дата
                 on = vk_session.method("friends.getOnline") 
                 counted = len(on) #количество друзей в онлайне
-                vk_session.method("status.set", {"text": f'{text} ' + nowtime})
-                time.sleep(times * 60) #время в минутах для автообновления статуса (без капчи - от двух-трёх минут и выше
+                vk_session.method("status.set", {"text": f'{text} {nowtime}'})
+                time.sleep(times * 60) #время в минутах для автообновления статуса (без капчи - от двух-трёх минут и выше)
 
         end_time = datetime.datetime(9999, 9, 1, 0, 0, 0)
         countdown(end_time)
