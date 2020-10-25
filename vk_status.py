@@ -2,6 +2,8 @@ import time
 import datetime
 import vk_api
 
+login = input('Введите логин >>> ')
+password = input('Введите пароль >>> ')
 
 def auth_handler(): #если есть двухфакторная аутентификция, то вызывается эта функция
     key = input("Enter authentication code: ") #код аутентификации
@@ -10,7 +12,7 @@ def auth_handler(): #если есть двухфакторная аутенти
 
 
 def main():
-    login, password = 'логин', 'пароль'
+    login, password = login, password
     vk_session = vk_api.VkApi(
         login, password,
         # функция для обработки двухфакторной аутентификации
