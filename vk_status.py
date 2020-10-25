@@ -2,11 +2,13 @@ import time
 import datetime
 import vk_api
 
-log = input('Введите логин >>> ')
-passwd = input('Введите пароль >>> ')
+from getpass import getpass
+
+log = input('Введите логин: ')
+passwd = getpass('Введи пароль: ')
 
 def auth_handler(): #если есть двухфакторная аутентификция, то вызывается эта функция
-    key = input("Enter authentication code: ") #код аутентификации
+    key = input("Введи код двухфакторной аутентификации: ") #код аутентификации
     remember_device = True # если: True - сохранить, False - не сохранять
     return key, remember_device
 
